@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 return [
     'enabled' => env('XRAY_ENABLED', true),
-
+    'service_name' => env('XRAY_SERVICE_NAME', env('APP_NAME', 'laravel').'_service'),
+    
     /*
     |--------------------------------------------------------------------------
     | Submission method
@@ -74,4 +75,12 @@ return [
             'expires' => '',
         ],
     ],
+    
+    /*
+    |--------------------------------------------------------------------------
+    | DAEMON, only needed if "DaemonSegmentSubmitter" submitter is chosen
+    |--------------------------------------------------------------------------
+    */
+    'daemon_host' => env('_AWS_XRAY_DAEMON_ADDRESS', '127.0.0.1'),
+    'daemon_port' => env('_AWS_XRAY_DAEMON_PORT', 2000)
 ];

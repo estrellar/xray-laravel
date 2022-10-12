@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 return [
     'enabled' => env('XRAY_ENABLED', true),
-    'service_name' => env('XRAY_SERVICE_NAME', env('APP_NAME', 'laravel').'_service'),
     
     /*
     |--------------------------------------------------------------------------
